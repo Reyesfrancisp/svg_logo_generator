@@ -16,7 +16,17 @@ const questions = [
     },
     {
         name: "textcolor",
-        message: "What color do you want for the text?"
+        message: "What color do you want for the text?",
+        validate: function (input) {
+            if (isHexColor(input)) {
+              return true;
+            } else
+            if (isColorName(input))
+            {
+                return true;
+            } else
+            return 'Please enter a valid color or hex value (e.g. #000000).';
+          }
     },
     {
         name: "shape",
@@ -32,6 +42,16 @@ const questions = [
     {
         name: "shapecolor",
         message: "What color do you want for the shape?",
+        validate: function (input) {
+            if (isHexColor(input)) {
+              return true;
+            } else
+            if (isColorName(input))
+            {
+                return true;
+            } else
+            return 'Please enter a valid color or hex value (e.g. #000000).';
+          }
     }
     
 ];
