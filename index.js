@@ -1,12 +1,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateShape = require("./lib/shapes.js");
-
+const colorConvert = require("color-convert");
 
 const questions = [
     {
         name: "text",
-        message: "What text do you want?"
+        message: "What text do you want?",
+        validate: function (input) {
+            if (input.length <= 3) {
+              return true;
+            }
+            return 'Please enter three letters or less.';
+          },
     },
     {
         name: "textcolor",
@@ -29,3 +35,14 @@ const questions = [
     }
     
 ];
+
+
+// Function to validate a hexadecimal color code
+function isHexColor(str) {
+  return colorConvert.hex.isValid(str);
+}
+
+// Function to validate a color name
+function isColorName(str) {
+  return colorConvert.keyword.exists(str);
+}
