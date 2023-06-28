@@ -1,6 +1,6 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-          <rect x="50" y="50" width="200" height="200" fill="black" />
-          <text x="150" y="100" font-size="20" fill="#567567">LOL</text>
+          <circle cx="150" cy="100" r="75" fill="red" />
+          <text x="150" y="100" font-size="32" fill="blue" text-anchor="middle" alignment-baseline="central">svg</text>
         </svg>
       
