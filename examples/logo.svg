@@ -1,6 +1,6 @@
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-          <circle cx="150" cy="100" r="75" fill="black" />
-          <text x="150" y="100" font-size="32" fill="blue" text-anchor="middle" alignment-baseline="central">XoX</text>
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+          <rect x="0" y="0" width="150" height="150" fill="blue" />
+          <text x="75" y="75" font-size="32" fill="red" text-anchor="middle" alignment-baseline="central">LOL</text>
         </svg>
       
