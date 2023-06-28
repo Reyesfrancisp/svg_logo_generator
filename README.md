@@ -30,6 +30,8 @@ To use the project you can simply run the index file and fill in the required in
 
   ## Visuals
 
+  [Link to youtube video showcasing the running code](https://youtu.be/3vDBLRE1UUE)
+
 Example Circle
 
 <img src = "assets\example_svg_logo_1.png">
