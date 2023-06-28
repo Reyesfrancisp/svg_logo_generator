@@ -65,7 +65,7 @@ userPrompt(questions).then((answers) => {
   }
 
   // Save the SVG to a file
-  fs.writeFile("logo.svg", svg, (err) => {
+  fs.writeFile("./examples/logo.svg", svg, (err) => {
     if (err) {
       console.error("Error saving SVG:", err);
     } else {

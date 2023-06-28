@@ -1,6 +1,0 @@
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-          <circle cx="150" cy="100" r="75" fill="red" />
-          <text x="150" y="100" font-size="32" fill="blue" text-anchor="middle" alignment-baseline="central">svg</text>
-        </svg>
-      
