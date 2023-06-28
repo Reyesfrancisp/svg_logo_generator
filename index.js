@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const colorValidate = require("validate-color").default;
 const fs = require("fs");
-const Shape = require("./lib/shapes.js");
+const { Shape, Triangle, Circle, Square } = require("./lib/shapes.js");
 const userPrompt = inquirer.createPromptModule();
 
 const questions = [
@@ -30,11 +30,7 @@ const questions = [
     name: "shape",
     message: "What shape do you want?",
     type: "list",
-    choices: [
-      "Circle",
-      "Triangle",
-      "Square"
-    ],
+    choices: ["Circle", "Triangle", "Square"],
   },
   {
     name: "shapecolor",
@@ -46,24 +42,22 @@ const questions = [
         return "Please enter a valid color or hex value (e.g. #000000).";
       }
     },
-  }
+  },
 ];
 
 userPrompt(questions).then((answers) => {
-  // Create an instance of the Shape class based on the selected shape
-   const shape = new Shape(answers.text, answers.textcolor, answers.shapecolor);
 
   // Generate the SVG based on the provided answers
   let svg;
   switch (answers.shape) {
     case "Circle":
-      svg = shape.makeCircle();
+      svg = new Circle(answers.text, answers.textcolor, answers.shapecolor).render();
       break;
     case "Triangle":
-      svg = shape.makeTriangle();
+      svg = new Triangle(answers.text, answers.textcolor, answers.shapecolor).render();
       break;
     case "Square":
-      svg = shape.makeSquare();
+      svg = new Square(answers.text, answers.textcolor, answers.shapecolor).render();
       break;
     default:
       console.error("Invalid shape");
