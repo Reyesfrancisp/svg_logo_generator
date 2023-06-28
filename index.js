@@ -1,8 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateShape = require("./lib/shapes.js");
-const colorConvert = require("color-convert");
-const userPrompt = inquirer.prompt();
+const colorValidate = require("validate-color").default;
+//const colorConvert = require("color-convert");
+
+const userPrompt = inquirer.createPromptModule();
 
 const questions = [
     {
@@ -19,15 +21,11 @@ const questions = [
         name: "textcolor",
         message: "What color do you want for the text?",
         validate: function (input) {
-            if (isHexColor(input)) {
-              return true;
-            } else
-            if (isColorName(input))
-            {
-                return true;
-            } else
-            return 'Please enter a valid color or hex value (e.g. #000000).';
-          }
+          if (colorValidate(input)) {
+            return true;
+          } else
+          return 'Please enter a valid color or hex value (e.g. #000000).';
+        }
     },
     {
         name: "shape",
@@ -44,12 +42,8 @@ const questions = [
         name: "shapecolor",
         message: "What color do you want for the shape?",
         validate: function (input) {
-            if (isHexColor(input)) {
+            if (colorValidate(input)) {
               return true;
-            } else
-            if (isColorName(input))
-            {
-                return true;
             } else
             return 'Please enter a valid color or hex value (e.g. #000000).';
           }
@@ -58,14 +52,4 @@ const questions = [
 ];
 
 
-// Function to validate a hexadecimal color code
-function isHexColor(str) {
-  return colorConvert.hex.isValid(str);
-}
-
-// Function to validate a color name
-function isColorName(str) {
-  return colorConvert.keyword.exists(str);
-}
-
-userPrompt(questions);
+userPrompt(questions).then((answers) => console.log(answers));

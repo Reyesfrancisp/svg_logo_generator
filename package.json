@@ -2,7 +2,8 @@
   "dependencies": {
     "color-convert": "^2.0.1",
     "inquirer": "^8.2.5",
-    "jest": "^25.0.0"
+    "jest": "^25.0.0",
+    "validate-color": "^2.2.4"
   },
   "name": "svg_logo_generator",
   "description": "",
@@ -12,7 +13,6 @@
     "example": "examples",
     "lib": "lib"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
