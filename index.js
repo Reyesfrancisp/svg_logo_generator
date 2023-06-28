@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateShape = require("./lib/shapes.js");
 const colorConvert = require("color-convert");
+const userPrompt = inquirer.prompt();
 
 const questions = [
     {
@@ -66,3 +67,5 @@ function isHexColor(str) {
 function isColorName(str) {
   return colorConvert.keyword.exists(str);
 }
+
+userPrompt(questions);
